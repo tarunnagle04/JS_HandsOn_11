@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Handson 11</title>
+    <style>
+        body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; color:cyan;text-decoration:underline">Functions</h1>
+    <h3 style="color:blue">Q:1)Create one function with zero parameter having a console statement</h3>
+    <h3>Answer:</h3>
+    <pre style="color:black">
+        function myFunction(){
+        console.log("Hi all!!")
+        }
+        myFunction()
+    </pre>
+    <h3 style="color:blue">Q:2)Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h3>
+    <h3>Answer:</h3>
+    <pre style="color:black">
+         var a=3;
+         var b=4;
+        function sum(a,b){
+        var c=a+b;
+        console.log("Sum of 3,4 is" +c);
+        }
+        sum(3,4)
+    </pre>
+    <h3 style="color:blue">Q:3)Create one arrow function</h3>
+    <h3>Answer:</h3>
+    <pre style="color:black">
+        let myFunction = (a, b) => {
+        console.log(a % b);
+        }
+        myFunction(10,3)
+    </pre>
+    <h3 style="color:blue">Q:4)Print Output:</h3>
+    <pre>
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+        var x = 20;
+        };
+        girl ();
+    </pre>
+    <h3 style="color:black">Answer: Undefined</h3>
+    <p style="color:black">Explanation:When the function is executed,it checks that there's a local variable x variable present but doesn't yet declare it.Here iniside the function,the x variable is declared after executing.</p>
+    <h3 style="color:blue">Q:5)Print output:</h3>
+    <pre>
+         var x = 21;
+        girl ();
+            console.log(x)
+        function girl() {
+            console.log(x);
+        var x = 20;
+    };
+
+    </pre>
+    <h3 style="color:black">Answer:Undefined  21</h3>
+    <p style="color:black">Explanation:Undefined came because the girl() is called before declaring it. 21 came because var keyword is redeclared, so if we redeclare the var keyword,it wont loose its first value we assigned,so the first value we assigned(i.e 21) gets as output.</p>
+    <h3 style="color:blue">Q:6)Print Output</h3>
+    <pre>
+       var x = 21;
+        a();
+        b();
+
+    function a() {
+    
+    x = 20;
+    console.log(x);
+    };
+    function b() {
+    
+    x = 40;
+   console.log(x);
+    };
+    </pre>
+    <h3 style="color:black">Answer:20 40</h3>
+    <p style="color:black">Explanation:When we declare a variable without any keyword,the scope of the variable change to global scope.So here inside the function,the values are assigned to a and b,and executed there itself,so we getting 'a' as 20 and 'b' as 40.</p>
+    <h3 style="color:blue">Q:7)Write a function that accepts parameter n and returns factorial of n</h3>
+    <h3>Answer:</h3>
+    <pre style="color:black">
+        function factorial(n) {
+        if (n === 0 || n === 1)
+            return 1;
+        for (var i = n - 1; i >= 1; i--) {
+            n*= i;
+        }
+        return n;
+        }
+        console.log(factorial(5));
+    </pre>
+    <p style="color:black">Output:120</p>
+</body>
+</html>
